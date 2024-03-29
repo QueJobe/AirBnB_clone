@@ -29,8 +29,8 @@ class BaseModel():
         Return dictionary representation of BaseModel class
         """
         base_dict = self.__dict__.copy()
-        base_dict['__class__'] = self.__class__.__name__
-        base_dict['created_at'] = self.created_at.isoformat()
-        base_dict['updated_at'] = self.updated_at.isoformat()
+        base_dict["__class__"] = type(self).__name__
+        base_dict["created_at"] = base_dict["created_at"].isoformat()
+        base_dict["updated_at"] = base_dict["updated_at"].isoformat()
 
         return base_dict
